@@ -34,10 +34,6 @@ import java.util.stream.Collectors;
  */
 public final class StringUtil
 {
-	/**
-	 * An empty String array.
-	 */
-	public static final String[] EMPTY_STRING_ARRAY = new String[0];
 
 	/**
 	 * Provides a Comparator for Strings that sorts in Case Sensitive Order.
@@ -71,7 +67,7 @@ public final class StringUtil
 	 */
 	public static String join(Collection<?> collection, char separator)
 	{
-		return join(collection, Character.toString(separator)).toString();
+		return join(collection, Character.toString(separator));
 	}
 	
 	/**
@@ -87,7 +83,7 @@ public final class StringUtil
 	 *            The separating String
 	 * @return A 'separator' separated String
 	 */
-	public static String join(Collection<?> collection, String separator)
+	public static String join(Iterable<?> collection, String separator)
 	{
 		StringJoiner result = new StringJoiner(separator);
 
